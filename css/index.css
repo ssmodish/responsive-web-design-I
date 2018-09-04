@@ -69,6 +69,10 @@ h1, h2, h3, h4, h5 {
 	box-sizing: border-box;
 }
 
+ul {
+	list-style: none;
+}
+
 .fixed-nav {
 	width: 900px;
 	height: 100px;
@@ -87,6 +91,10 @@ h1, h2, h3, h4, h5 {
 .container {
 	width: 900px;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 }
 
 header {
@@ -125,7 +133,7 @@ header button {
 }
 
 hr {
-    width: 48%;
+    width: 98%;
 }
 
 .two-col {
@@ -155,23 +163,24 @@ hr {
 }
 
 .contact {
-	margin: 50px 10px 50px 0;
+	padding: 20px 0 40px 10px;
 }
 
-address {
-	margin: 20px 0;
-}
-
-.phone {
-	margin: 20px 0;
+.contact address {
+	font-size: 15px;
+	letter-spacing: .4px;
+	padding: 5px 0;
 }
 
 .contact p {
-	margin: 20px 0;
+	font-size: 15px;
+	letter-spacing: .4px;
+	padding: 5px 0;
 }
 
 footer {
 	text-align: center;
+	margin-bottom: 30px;
 }
 
 .services {
@@ -235,7 +244,6 @@ footer {
 }
 
 footer {
-	margin-bottom: 30px;
 }
 
 nav a:hover {
@@ -243,57 +251,65 @@ nav a:hover {
 }
 
 @media (max-width:800px) {
-    .fixed-nav {
+    .container {
         width: 100%;
-        margin: 20px 0;
+	}
+	
+	.fixed-nav {
+        width: 100%;
+        margin: 30px 0 0;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .fixed-nav .nav-bar {
-        order: 1;
-        padding: 50px;
-    }
+		order: 1;
+		padding-right: 5px;
+	}
 
+	.fixed-nav .nav-bar a {
+		padding: 0 30px;
+	}
     .fixed-nav .nav-bar .logo-link {
         order: 0;
-    }
-
-    .container {
-        width: 100%;
-    }
+	}
+	
 
     header {
-        padding-bottom: 40px;
+		margin: 0;
+		padding: 40px 0;
+		margin-bottom: 15px;
+		display: flex;
+		justify-content: center;
+		align-content: center;
     }
 
     header .header-content {
         margin: 0;
         padding: 0;
-        padding-top: 40px;
+		display: flex;
+		justify-content: center;
+		align-content: center;
     }
 
     header .header-img {
-        display: none;
+		display: none;
     }
 
     header .header-content h1 {
-        padding: 0;
-        padding-bottom: 30px;
-        margin: 0;
-        margin-top: 40px;
-    }
+		margin: 0;
+		padding: 25px 0;
+	}
 
     header .header-content .button {
         padding: 0;
-        margin: 0;
-        margin-left: 21%;
+        margin: 0 auto;
         height: 30px;
     }
 
     hr {
-        width: 95%;
-        margin: 5px 0;
+		width: 97%;
+        margin: 20px auto;
     }
 
     .two-col {
@@ -304,5 +320,79 @@ nav a:hover {
         width: 48%;
     }
 
+
+}
+
+@media (max-width:500px) {
+	.fixed-nav {
+		margin: 0;
+		height: 450px;
+		padding: 15px 0;
+		display: flex;
+		justify-content: center;
+		align-content: flex-start;
+	}
+
+	.fixed-nav .logo-link {
+		margin: 0 auto;
+		padding: 0 30%;
+	}
+
+	.fixed-nav .nav-bar {
+		width: 100%;
+	}
+
+	.fixed-nav .nav-bar ul {
+		margin-top: 20px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: stretch;
+	}
+
+	.fixed-nav .nav-bar ul li {
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		text-align: center;
+		padding: 20px 100px;
+	}
+
+	.fixed-nav .nav-bar ul li:hover {
+		background: #ccc;
+	}
+
+	.fixed-nav .nav-bar ul li a:hover {
+		background: #ccc;
+	}
+
+	.button:hover {
+		background: #ccc;
+	}
+
+	.header-content h1 {
+		margin-right: 10px;
+	}
+
+	hr {
+		margin-top: 50px;
+	}
+
+	.two-col {
+		flex-direction: column;
+	}
+
+	.two-col div {
+		width: 100%;
+	}
+
+	.three-col {
+		flex-direction: column;
+	}
+
+
+	.three-col div {
+		width: 100%;
+	}
 
 }
